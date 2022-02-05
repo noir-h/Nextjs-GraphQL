@@ -3,15 +3,12 @@ version: '3'
 services:
   app:
     build: .
-    image: nextjs-hasura-lesson_app
     environment:
       - NODE_ENV=development
-#    volumes:
-#      - type: bind
-#        source: ./project
-#        target: /usr/src/app
     volumes:
-      - ./project/:/usr/src/app
+      - type: bind
+        source: ./project
+        target: /usr/src/app
     ports:
       - '3000:3000'
     tty: true
