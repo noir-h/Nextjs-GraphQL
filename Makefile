@@ -23,3 +23,5 @@ stop:
 	docker compose stop
 down:
 	docker compose down --remove-orphans
+app:
+	docker compose exec app sh

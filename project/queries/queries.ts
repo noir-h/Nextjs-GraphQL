@@ -9,6 +9,7 @@ export const GET_USERS = gql`
     }
   }
 `
+// @clientでキャッシュを読み込みにいく
 export const GET_USERS_LOCAL = gql`
   query GetUsers {
     users(order_by: { created_at: desc }) @client {

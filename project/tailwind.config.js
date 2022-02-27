@@ -4,7 +4,7 @@ module.exports = {
     "./components/**/*.{js,tx,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: { opacity: ['disabled'] },
   },
   plugins: [],
 }
