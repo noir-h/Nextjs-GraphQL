@@ -8,10 +8,15 @@ import { Layout } from '../components/Layout'
 
 const FetchMain: VFC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
-    fetchPolicy: 'network-only',
-    // fetchPolicy: 'cache-and-network',
+    // fetchPolicy: 'network-only',
+    fetchPolicy: 'cache-and-network',
     //fetchPolicy: 'cache-first',
     //fetchPolicy: 'no-cache',
+
+    // network-only => 常にサーバーサイドにアクセスしてcacheに保存する
+    // cache-and-network => 一旦はcacheを取得して、その後サーバーサイドにアクセスしてデータを上書きする
+    // cache-first => always see cache data, サーバーサイドで変更があっても反映できない
+    // no-cache => like a axios, don't save in cache
   })
   if (error)
     return (

@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client'
 
+// There is a description of the type generation procedure in the README.md of ##5.
 export const GET_USERS = gql`
   query GetUsers {
     users(order_by: { created_at: desc }) {
@@ -26,6 +27,7 @@ export const GET_USERIDS = gql`
     }
   }
 `
+// it meaning is required => !
 export const GET_USERBY_ID = gql`
   query GetUserById($id: uuid!) {
     users_by_pk(id: $id) {

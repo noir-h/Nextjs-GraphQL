@@ -1,3 +1,4 @@
+// reference https://github.com/vercel/next.js/blob/canary/examples/with-apollo/lib/apolloClient.js
 import {
   ApolloClient,
   HttpLink,
@@ -7,7 +8,7 @@ import {
 import 'cross-fetch/polyfill'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
-
+// ApolloClient<NormalizedCacheObject> data type
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 const createApolloClient = () => {
   return new ApolloClient({
